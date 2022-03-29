@@ -25,9 +25,7 @@ else:
     ssl._create_default_https_context = _create_unverified_https_context
 nltk.download('stopwords')
 nltk.download('punkt')
-# from nltk.tokenize import word_tokenize
 from matplotlib import pyplot
-import string
 import operator
 
 
@@ -49,12 +47,6 @@ def read_character_data(file: str) -> dict[str, int]:
     file_handle = open(file, READ_MODE, encoding='utf-8')
     for line in file_handle:
         line = line.lower()
-        # word_tokens = word_tokenize(line)    
-        # for current_word in word_tokens:
-        #     if current_word in counts:
-        #         counts[current_word] += 1
-        #     elif current_word not in stopwords.words('english'):
-        #         counts[current_word] = 1
         current_word: str = ""
         for char in line:
             if (char != " ") and char.isalpha():
@@ -64,12 +56,9 @@ def read_character_data(file: str) -> dict[str, int]:
                     counts[current_word] += 1
                 elif (current_word not in stopwords.words('english')) and (current_word != ""):
                     counts[current_word] = 1
-                # elif current_word != "":
-                #     counts[current_word] = 1
                 current_word = ""
     file_handle.close()  # Done working with file, close it!
     print("Total Unique Words Found: " + str(len(counts)))
-    # print(counts)
     return counts
 
 
