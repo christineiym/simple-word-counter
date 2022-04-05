@@ -7,9 +7,9 @@ Steps for use:
 4) Run `python -m simple_word_counter`.
 """
 # Change these constants as necessary.
-INPUT_FILE_PATH: str = "./input/sample.txt"
-OUTPUT_TXT_FILE_PATH: str = "./output/outputData.txt"
-OUTPUT_PNG_FILE_PATH: str = "./output/outputImage.png"
+INPUT_FILE_PATH: str = "./input/inputData1.txt"
+OUTPUT_TXT_FILE_PATH: str = "./output/outputData1.txt"
+OUTPUT_PNG_FILE_PATH: str = "./output/outputImage1.png"
 NUMBER_OF_WORDS_IN_CHART: int = 20
 # End edit
 
@@ -39,7 +39,7 @@ def main() -> None:
     """Entrypoint to our program."""
     all_word_counts: dict[str, int] = read_character_data(INPUT_FILE_PATH)
     top_word_counts: dict[str, int] = find_top_word_counts(all_word_counts, NUMBER_OF_WORDS_IN_CHART)
-    write_data_to_file(all_word_counts)
+    write_data_to_file(find_top_word_counts(all_word_counts, int(all_word_counts.len())))
     chart_data(top_word_counts, NUMBER_OF_WORDS_IN_CHART)
 
 
