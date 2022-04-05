@@ -2,15 +2,15 @@
 
 Steps for use:
 1) Open this folder in a terminal (or open a terminal in your code editor of choice after cloning this repository).
-2) Change the three file paths immediately below this docstring as necessary.
-3) Run `pip install -r requirements.txt`
-4) Run `python -m simple_word_counter`
-5) Save the resulting visualization, if desired.
+2) Change the 4 constants (3 file paths, and number of words wanted in chart) immediately below this docstring as necessary.
+3) Run `pip install -r requirements.txt`.
+4) Run `python -m simple_word_counter`.
 """
-# Change these file paths as necessary.
+# Change these constants as necessary.
 INPUT_FILE_PATH: str = "./input/sample.txt"
 OUTPUT_TXT_FILE_PATH: str = "./output/outputData.txt"
 OUTPUT_PNG_FILE_PATH: str = "./output/outputImage.png"
+NUMBER_OF_WORDS_IN_CHART: int = 20
 # End edit
 
 
@@ -37,11 +37,10 @@ READ_MODE = "r"
 
 def main() -> None:
     """Entrypoint to our program."""
-    number_words_wanted: int = int(input("How many words do you want charted? "))
     all_word_counts: dict[str, int] = read_character_data(INPUT_FILE_PATH)
-    top_word_counts: dict[str, int] = find_top_word_counts(all_word_counts, number_words_wanted)
-    write_data_to_file(top_word_counts)
-    chart_data(top_word_counts, number_words_wanted)
+    top_word_counts: dict[str, int] = find_top_word_counts(all_word_counts, NUMBER_OF_WORDS_IN_CHART)
+    write_data_to_file(all_word_counts)
+    chart_data(top_word_counts, NUMBER_OF_WORDS_IN_CHART)
 
 
 def read_character_data(file: str) -> dict[str, int]:
