@@ -8,8 +8,8 @@ Steps for use:
 5) Save the resulting visualization, if desired.
 """
 # Change these file paths as necessary.
-INPUT_FILE_PATH: str = "sample.txt"
-OUTPUT_FILE_PATH: str = "outputData.txt"
+INPUT_FILE_PATH: str = "./input/sample.txt"
+OUTPUT_FILE_PATH: str = "./output/outputData.txt"
 # End edit
 
 
