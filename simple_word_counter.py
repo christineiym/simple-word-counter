@@ -2,7 +2,7 @@
 
 Steps for use:
 1) Open this folder in a terminal (or open a terminal in your code editor of choice after cloning this repository).
-2) Change the two file paths immediately below this docstring as necessary.
+2) Change the three file paths immediately below this docstring as necessary.
 3) Run `pip install -r requirements.txt`
 4) Run `python -m simple_word_counter`
 5) Save the resulting visualization, if desired.
