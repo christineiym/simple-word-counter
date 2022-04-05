@@ -39,7 +39,7 @@ def main() -> None:
     """Entrypoint to our program."""
     all_word_counts: dict[str, int] = read_character_data(INPUT_FILE_PATH)
     top_word_counts: dict[str, int] = find_top_word_counts(all_word_counts, NUMBER_OF_WORDS_IN_CHART)
-    write_data_to_file(find_top_word_counts(all_word_counts, int(all_word_counts.len())))
+    write_data_to_file(find_top_word_counts(all_word_counts, len(all_word_counts)))
     chart_data(top_word_counts, NUMBER_OF_WORDS_IN_CHART)
 
 
