@@ -10,7 +10,7 @@ Steps for use:
 # Change these file paths as necessary.
 INPUT_FILE_PATH: str = "./input/sample.txt"
 OUTPUT_TXT_FILE_PATH: str = "./output/outputData.txt"
-OUTPUT_PNG_FILE_PATH: str = "./output/outputImage.txt"
+OUTPUT_PNG_FILE_PATH: str = "./output/outputImage.png"
 # End edit
 
 
