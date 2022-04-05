@@ -9,7 +9,8 @@ Steps for use:
 """
 # Change these file paths as necessary.
 INPUT_FILE_PATH: str = "./input/sample.txt"
-OUTPUT_FILE_PATH: str = "./output/outputData.txt"
+OUTPUT_TXT_FILE_PATH: str = "./output/outputData.txt"
+OUTPUT_PNG_FILE_PATH: str = "./output/outputImage.txt"
 # End edit
 
 
@@ -85,7 +86,7 @@ def find_top_word_counts(complete_dictionary: dict[str, int], bars_wanted: int) 
 
 def write_data_to_file(data: dict[str, int]) -> None:
     """Write data to txt file."""
-    outF = open(OUTPUT_FILE_PATH, "w")
+    outF = open(OUTPUT_TXT_FILE_PATH, "w")
     for item in data:
         outF.write(item + ": " + str(data[item]))
         outF.write("\n")
@@ -109,7 +110,7 @@ def chart_data(word_counts: dict[str, int], bars_wanted: int) -> None:
                     textcoords="offset points",
                     ha='center', va='bottom')
     # pyplot.xticks(rotation = 90) # Rotates X-Axis Ticks by 45-degrees
-    pyplot.show()
+    pyplot.savefig(OUTPUT_PNG_FILE_PATH, bbox_inches='tight')
 
 
 if __name__ == "__main__":
